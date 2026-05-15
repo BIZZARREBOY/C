@@ -29,11 +29,9 @@ int main(){
     printf("Ingrese los tres numeros");
     scanf("%d%d%d", &a, &b, &c);
 
-    int mayor = (a >= b && a >= c) ? a : (b >= a && b >= c) ? b : c;
-    int menor = (a <= b && a <= c) ? a : (b <= a && b <= c) ? b : c;
-    int medio = (a != menor && a != mayor) ? a : (b != menor && b != mayor) ? b : c;
-
-    printf("%d<%d<%d", menor, medio, mayor);
+    printf("%d<%d<%d", (a<=b && a<=c) ? a : (b<=a && b<=c) ? b : c,
+                        ((a<=b && b<= c) || (c<=b && b<=c))  ? b : ((a<=c && c<=b) || (b<=c && c<=a)) ? c : a,
+                        (a>=b && a>=c) ? a : (b>=a && b>=c) ? b : c);
 
     /*if(a<b && a<c){
             if(b<c){
